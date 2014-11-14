@@ -15,6 +15,6 @@ class gitblitgroovy::puppetchecks (
   $file = "org.eclipse.jgit.archive-${jgitversion}.jar"
   staging::file { $file:
     source => "${source}/${file}",
-    target => "${::gitblit::installdir}/ext",
+    target => "${::gitblit::installdir}/ext/${file}",
   }
 }
