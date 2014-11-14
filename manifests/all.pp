@@ -1,3 +1,3 @@
 class gitblitgroovy::all {
-  include gibtlitgroovy::puppetchecks
+  include gitblitgroovy::puppetchecks
 }
