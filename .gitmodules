@@ -1,0 +1,3 @@
+[submodule "files/gitblit-groovy"]
+	path = files/gitblit-groovy
+	url = https://github.com/mgruener/gitblit-groovy.git
