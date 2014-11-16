@@ -16,12 +16,12 @@ class gitblitgroovy::r10kdeploy (
     }
   }
 
-#  file { "${::gitblit::datadir}/groovy/r10k-deploy.groovy":
-#    ensure  => present,
-#    content => file('gitblitgroovy/gitblit-groovy/r10k-deploy.groovy'),
-#    owner   => $::gitblit::user,
-#    group   => $::gitblit::group,
-#    mode    => '0644',
-#    require => Staging::File[$file],
-#  }
+  file { "${::gitblit::datadir}/groovy/r10k-deploy.groovy":
+    ensure  => present,
+    content => file('gitblitgroovy/gitblit-groovy/r10k-deploy.groovy'),
+    owner   => $::gitblit::user,
+    group   => $::gitblit::group,
+    mode    => '0644',
+    require => Staging::File[$file],
+  }
 }
