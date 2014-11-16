@@ -22,6 +22,5 @@ class gitblitgroovy::r10kdeploy (
     owner   => $::gitblit::user,
     group   => $::gitblit::group,
     mode    => '0644',
-    require => Staging::File[$file],
   }
 }
