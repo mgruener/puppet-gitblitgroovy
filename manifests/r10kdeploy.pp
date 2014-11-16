@@ -9,9 +9,10 @@ class gitblitgroovy::r10kdeploy (
       ensure  => 'present',
       comment => 'Allow r10k to be called by gitblit',
       users   => ['gitblit'],
-      runas   => [$runas],
-      cmnds   => ['/bin/r10k'],
-      tags    => ['NOPASSWD'],
+      runas    => [$runas],
+      cmnds    => ['/bin/r10k'],
+      tags     => ['NOPASSWD'],
+      defaults => ['!requiretty'],
     }
   }
 
