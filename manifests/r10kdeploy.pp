@@ -1,6 +1,6 @@
 class gitblitgroovy::r10kdeploy (
   $use_sudo = true,
-  $runas    = 'puppet',
+  $runas    = pick($::r10k::config::cachedirgroup,'puppet'),
 ) {
   require gitblitgroovy
 
