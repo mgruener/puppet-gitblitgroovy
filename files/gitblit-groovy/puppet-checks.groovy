@@ -100,8 +100,11 @@ try {
 def checksToPerform = gitblit.getString('puppetchecks.checks','validate lint erb yaml json').tokenize()
 def lintOptions = gitblit.getString('puppetchecks.lintoptions','--fail-on-warnings --no-autoloader_layout-check --no-80chars-check').tokenize()
 
-def repoChecksToPerform = repository.customFields.puppetchecks.tokenize()
-def repoLintOptions = repository.customFields.puppetcheckslintoptions.tokenize()
+def puppetChecksField = repository.customFields.puppetchecks
+def repoChecksToPerform = puppetChecksField ? puppetChecksField.tokenize() : null
+
+def puppetChecksLintOptionsField = repository.customFields.puppetcheckslintoptions
+def repoLintOptions = puppetChecksLintOptionsField ? puppetChecksLintOptionsField.tokenize() : null
 
 if (repoChecksToPerform) {
 	checksToPerform = repoChecksToPerform
