@@ -18,4 +18,14 @@ class gitblitgroovy::puppetchecks (
     mode    => '0644',
     require => Staging::File[$file],
   }
+
+  gitblit::config { 'puppetchecks.checks':
+    ensure => present,
+    value  => 'validate lint erb yaml json',
+  }
+
+  gitblit::config { 'puppetchecks.lintoptions':
+    ensure => present,
+    value  => 'puppetchecks=Puppet checks (overrides puppetchecks.checks)" "puppetcheckslintoptions=Puppet Lint Options (overrides puppetchecks.lintoptions)',
+  }
 }
